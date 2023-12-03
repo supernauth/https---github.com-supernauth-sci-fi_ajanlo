@@ -2,17 +2,16 @@ import json
 import random
 
 class SciFiAjanlo:
-    file_path = "db.json"
-
-    def __init__(self):
-        pass
+    
+    def __init__(self, útvonal):
+        self.útvonal = útvonal
     
     def műfaj_nyomtató(self):
         műfajok = []
-        with open(self.file_path, "r") as file:
+        with open(self.útvonal, "r") as file:
             db = json.load(file)
 
-        for key in db.items():
+        for key, value in db.items():
             műfajok.append(key)
         
         return műfajok
@@ -21,22 +20,47 @@ class SciFiAjanlo:
         választott_műfaj = input("Melyik műfajból választasz? ")
         return választott_műfaj
 
-    def műfaj_véletlen_könyve(self):
-        random_konyv = random.randint(0, len(self.db[self.műfaj_választó]))
-        print(self.db[self.műfaj_választó][random_konyv]["cím"])
+    def véletlen_szám_sorsoló(self, műfaj):
+        with open(self.útvonal, "r") as file:
+            db = json.load(file)
+            random_könyv_sorszám = random.randint(0, (len(db[műfaj]) - 1))
+            return random_könyv_sorszám
+
+    def műfaj_véletlen_könyve(self, műfaj, sorszám):
+        with open(self.útvonal, "r") as file:
+            db = json.load(file)
+            könyv = db[műfaj][sorszám]["cím"]
+            return könyv
+
+    def könyv_feljegyzése(self, zsáner, sorszám):
+         with open(self.útvonal, "r") as file:
+            db = json.load(file)
+            with open("ajanlas.txt", "w") as ajánlás:
+                ajánlás.write(db[zsáner][sorszám]["cím"])
+                ajánlás.write(db[zsáner][sorszám]["szerző"])
+                ajánlás.write(str(db[zsáner][sorszám]["sorozat része"]))
+                ajánlás.write(str(db[zsáner][sorszám]["film adaptáció"]))
         
+
 üdvözlő = """
 Ma felvirradt a szerencsenapod. Úgy hírlik, hogy sci-fi regényt keresel.
 Már feketeöves rajongó vagy vagy csak most ismerkedsz vele?
-
 Mindegy is, csapjunk bele!
 """
 
+
 print(üdvözlő)
-további_könyv = True
+ajanlo = SciFiAjanlo("db.json")
 
-ajanlo = SciFiAjanlo()
+print("Nézzünk akkor egy könyvet!\nMutatom a műfajokat:")
+for i in ajanlo.műfaj_nyomtató():
+    print(i)
 
-while további_könyv:
-    pass
+választott_műfaj = input("Melyik műfajból szeretnél választani? A fentiek közül tudsz választani: ")
+
+print("Remek választás! A következő könyvet tudom ajánlani:")
+random_könyv = ajanlo.véletlen_szám_sorsoló(választott_műfaj)
+olvasnivaló = ajanlo.műfaj_véletlen_könyve(választott_műfaj, random_könyv)
+print(olvasnivaló)
+ajanlo.könyv_feljegyzése(választott_műfaj, random_könyv)
 
