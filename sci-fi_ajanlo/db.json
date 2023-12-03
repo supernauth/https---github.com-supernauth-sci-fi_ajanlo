@@ -1,0 +1,167 @@
+{
+    "űropera": [
+      {
+        "cím": "Dűne",
+        "szerző": "Frank Herbert",
+        "sorozat része": true,
+        "film adaptáció": true
+      },
+      {
+        "cím": "Leviatán Ébredése",
+        "szerző": "James S.A. Corey",
+        "sorozat része": true,
+        "film adaptáció": true
+      },
+      {
+        "cím": "Hyperion",
+        "szerző": "Dan Simmons",
+        "sorozat része": true,
+        "film adaptáció": false
+      },
+      {
+        "cím": "Az ​ogfák vöröse",
+        "szerző": "Raana Raas",
+        "sorozat része": true,
+        "film adaptáció": false
+      }
+    ],
+    "cyberpunk": [
+      {
+        "cím": "Neuromancer",
+        "szerző": "William Gibson",
+        "sorozat része": true,
+        "film adaptáció": false
+      },
+      {
+        "cím": "Snow Crash",
+        "szerző": "Neal Stephenson",
+        "sorozat része": false,
+        "film adaptáció": false
+      },
+      {
+        "cím": "Altered ​Carbon",
+        "szerző": "Richard K. Morgan",
+        "sorozat része": true,
+        "film adaptáció": true
+      }
+    ],
+    "időutazás": [
+      {
+        "cím": "11/22/63",
+        "szerző": "Stephen King",
+        "sorozat része": false,
+        "film adaptáció": false
+      },
+      {
+        "cím": "Az Időgép",
+        "szerző": "H.G. Wells",
+        "sorozat része": false,
+        "film adaptáció": true
+      },
+      {
+        "cím": "Az időutazás napja",
+        "szerző": "Brandon Hackett",
+        "sorozat része": true,
+        "film adaptáció": false
+      }
+    ],
+    "posztapokaliptikus": [
+      {
+        "cím": "Az éhezők viadala",
+        "szerző": "Suzanne Collins",
+        "sorozat része": true,
+        "film adaptáció": true
+      },
+      {
+        "cím": "Malevil",
+        "szerző": "Robert Merle",
+        "sorozat része": false,
+        "film adaptáció": true
+      },
+      {
+        "cím": "A siló",
+        "szerző": "Hugh Howey",
+        "sorozat része": true,
+        "film adaptáció": true
+      },
+      {
+        "cím": "Metró 2033",
+        "szerző": "Dmitry Glukhovsky",
+        "sorozat része": true,
+        "film adaptáció": false
+      }
+    ],
+    "robotika": [
+      {
+        "cím": "Alapítvány",
+        "szerző": "Isaac Asimov",
+        "sorozat része": true,
+        "film adaptáció": true
+      },
+      {
+        "cím": "Az én, a robot",
+        "szerző": "Isaac Asimov",
+        "sorozat része": true,
+        "film adaptáció": true
+      },
+      {
+        "cím": "Álmodnak-e az androidok elektronikus bárányokkal?",
+        "szerző": "Philip K. Dick",
+        "sorozat része": true,
+        "film adaptáció": true
+      },
+      {
+        "cím": "Kritikus rendszerhiba",
+        "szerző": "Martha Wells",
+        "sorozat része": true,
+        "film adaptáció": false
+      }
+    ],
+    "biopunk": [
+      {
+        "cím": "Guvat és Gazella",
+        "szerző": "Margaret Atwood",
+        "sorozat része": true,
+        "film adaptáció": false
+      },
+      {
+        "cím": "A felhúzhatós lány",
+        "szerző": "Paolo Bacigalupi",
+        "sorozat része": false,
+        "film adaptáció": false
+      },
+      {
+        "cím": "Perdido pályaudvar, végállomás",
+        "szerző": "China Miéville",
+        "sorozat része": true,
+        "film adaptáció": false
+      }
+    ],
+    "hard sci-fi": [
+      {
+        "cím": "Diaszpóra",
+        "szerző": "Greg Egan",
+        "sorozat része": false,
+        "film adaptáció": false
+      },
+      {
+        "cím": "Napok háza",
+        "szerző": "Alastair Reynolds",
+        "sorozat része": false,
+        "film adaptáció": false
+      },
+      {
+        "cím": "A Marsi",
+        "szerző": "Andy Weir",
+        "sorozat része": false,
+        "film adaptáció": true
+      },
+      {
+        "cím": "Az idő gyermekei",
+        "szerző": "Adrian Tchaikovsky",
+        "sorozat része": true,
+        "film adaptáció": false
+      }
+    ]
+  }
+  
