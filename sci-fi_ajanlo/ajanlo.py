@@ -13,7 +13,10 @@ class Ajanlo:
 Ma felvirradt a szerencsenapod. Úgy hírlik, hogy {self.műfaj} regényt keresel.
 Már feketeöves rajongó vagy vagy csak most ismerkedsz vele?
 Mindegy is, csapjunk bele!
-"""
+
+Nézzünk akkor egy könyvet!
+
+Mutatom a műfajokat:"""
         return print(üdvözlő_szöveg)
     
     def alműfaj_nyomtató(self):
@@ -39,24 +42,30 @@ Mindegy is, csapjunk bele!
     def műfaj_véletlen_könyve(self, alműfaj, sorszám):
         with open(self.útvonal, "r") as file:
             db = json.load(file)
+            szerző = db[alműfaj][sorszám]["szerző"]
             könyv = db[alműfaj][sorszám]["cím"]
-            return könyv
+            return f"{szerző}: {könyv}"
 
     def könyv_feljegyzése(self, alműfaj, sorszám):
          with open(self.útvonal, "r") as file:
             db = json.load(file)
             with open("ajanlas.txt", "w") as ajánlás:
-                ajánlás.write(db[alműfaj][sorszám]["cím"])
+                ajánlás.write("szerző: ")
                 ajánlás.write(db[alműfaj][sorszám]["szerző"])
+                ajánlás.write("\n")
+                ajánlás.write("cím: ")
+                ajánlás.write(db[alműfaj][sorszám]["cím"])
+                ajánlás.write("\n")
+                ajánlás.write("sorozat része: ")
                 ajánlás.write(str(db[alműfaj][sorszám]["sorozat része"]))
+                ajánlás.write("\n")
+                ajánlás.write("film adaptáció: ")
                 ajánlás.write(str(db[alműfaj][sorszám]["film adaptáció"]))
 
     def ajánlás_hely_kiíró(self):
         hely = os.getcwd()
-        hely_string = f"Az ajánlást részletesen lementettem az alábbi helyre: \
-            {hely}/ajanlas.txt"
-        return hely_string
+        hely_string = print(f"\nAz ajánlást részletesen lementettem az alábbi helyre:\n{hely}/ajanlas.txt\n")
+
+    def elköszönő(self):
+        print("Köszönjük a megkeresést, jó olvasást kívánunk!")
         
-
-
-
