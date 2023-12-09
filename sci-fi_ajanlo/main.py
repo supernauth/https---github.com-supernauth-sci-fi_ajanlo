@@ -7,12 +7,14 @@ ajanlo_app.üdvözlés()
 for i in ajanlo_app.alműfaj_nyomtató():
     print(i)
 
+alműfaj_lista = ajanlo_app.alműfaj_nyomtató()
 menő_műfaj = ["űropera", "hard sci-fi"]
+kevésbé_menő_műfaj = [műfaj for műfaj in alműfaj_lista if műfaj not in menő_műfaj]
+
 # kevésbé_menő_műfaj = ajanlo_app.alműfaj_nyomtató().remove("űropera")
 
 választott_alműfaj = input("\nMelyik műfajból szeretnél választani? A fentiek közül tudsz választani: ")
 
-# Lekezelni, hogy ha nem jó a bevitt szöveg
 jó_választás = True
 
 while jó_választás:
