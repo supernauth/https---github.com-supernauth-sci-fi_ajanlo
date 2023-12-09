@@ -56,11 +56,15 @@ Mutatom a műfajokat:"""
                 ajánlás.write("cím: ")
                 ajánlás.write(db[alműfaj][sorszám]["cím"])
                 ajánlás.write("\n")
-                ajánlás.write("sorozat része: ")
-                ajánlás.write(str(db[alműfaj][sorszám]["sorozat része"]))
+                if db[alműfaj][sorszám]["sorozat része"] == True:
+                    ajánlás.write("Egy könysorozat része, van folytatása.")
+                else:
+                    ajánlás.write("Sajnos folytatása nincsen.")
                 ajánlás.write("\n")
-                ajánlás.write("film adaptáció: ")
-                ajánlás.write(str(db[alműfaj][sorszám]["film adaptáció"]))
+                if db[alműfaj][sorszám]["film adaptáció"] == True:
+                    ajánlás.write("Ha tetszik, jó hír, mert készült belőle film vagy sorozat adaptáció.")
+                else:
+                    ajánlás.write("Eddig nem készült belőle film- vagy sorozatadaptáció.")
 
     def ajánlás_hely_kiíró(self):
         hely = os.getcwd()

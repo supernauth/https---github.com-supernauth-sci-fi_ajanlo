@@ -15,14 +15,13 @@ kevésbé_menő_műfaj = [műfaj for műfaj in alműfaj_lista if műfaj not in m
 
 választott_alműfaj = input("\nMelyik műfajból szeretnél választani? A fentiek közül tudsz választani: ")
 
-jó_választás = True
+jó_választás = False
 
-while jó_választás:
+while not jó_választás:
     if választott_alműfaj in alműfaj_lista:
         if választott_alműfaj in menő_műfaj:
             print("\nRemek választás! A következő könyvet tudom ajánlani:")
-            
-            jó_választás = False
+            jó_választás = True
         elif választott_alműfaj in kevésbé_menő_műfaj:
             print("\nRendben, a lenti könyvet ajánlom. Azért vess egy pillantást az űropera vagy hard sci-fi felé is!")
 
@@ -32,7 +31,7 @@ while jó_választás:
         ajanlo_app.könyv_feljegyzése(választott_alműfaj, random_könyv)
         ajanlo_app.ajánlás_hely_kiíró()
         ajanlo_app.elköszönő()
-        jó_választás = False
+        jó_választás = True
     else:
         print("Hibás alműfaj.")
         választott_alműfaj = input("Próbáld újra: ")           
