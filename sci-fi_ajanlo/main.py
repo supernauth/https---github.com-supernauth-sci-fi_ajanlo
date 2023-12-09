@@ -11,8 +11,6 @@ alműfaj_lista = ajanlo_app.alműfaj_nyomtató()
 menő_műfaj = ["űropera", "hard sci-fi"]
 kevésbé_menő_műfaj = [műfaj for műfaj in alműfaj_lista if műfaj not in menő_műfaj]
 
-# kevésbé_menő_műfaj = ajanlo_app.alműfaj_nyomtató().remove("űropera")
-
 választott_alműfaj = input("\nMelyik műfajból szeretnél választani? A fentiek közül tudsz választani: ")
 
 jó_választás = False
@@ -33,8 +31,7 @@ while not jó_választás:
         ajanlo_app.elköszönő()
         jó_választás = True
     else:
-        print("Hibás alműfaj.")
-        választott_alműfaj = input("Próbáld újra: ")           
+        választott_alműfaj = input("\nHibás alműfaj, próbáld újra: ")           
 
 
 
