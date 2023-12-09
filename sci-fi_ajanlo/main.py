@@ -18,28 +18,24 @@ választott_alműfaj = input("\nMelyik műfajból szeretnél választani? A fent
 jó_választás = True
 
 while jó_választás:
-    try:
-        if választott_alműfaj in alműfaj_lista:
-            if választott_alműfaj in menő_műfaj:
-                print("\nRemek választás! A következő könyvet tudom ajánlani:")
-                
-                jó_választás = False
-            elif választott_alműfaj in kevésbé_menő_műfaj:
-                print("\nRendben, a lenti könyvet ajánlom. Azért vess egy pillantást az űropera vagy hard sci-fi felé is!")
-
-            random_könyv = ajanlo_app.véletlen_szám_sorsoló(választott_alműfaj)
-            olvasnivaló = ajanlo_app.műfaj_véletlen_könyve(választott_alműfaj, random_könyv)
-            print(olvasnivaló)
-            ajanlo_app.könyv_feljegyzése(választott_alműfaj, random_könyv)
-            ajanlo_app.ajánlás_hely_kiíró()
-            ajanlo_app.elköszönő()
+    if választott_alműfaj in alműfaj_lista:
+        if választott_alműfaj in menő_műfaj:
+            print("\nRemek választás! A következő könyvet tudom ajánlani:")
+            
             jó_választás = False
-        else:
-            print("Hibás alműfaj.")
-            választott_alműfaj = input("Próbáld újra: ")           
-    except:
-        print("Hibás adatbevitel.")
-        választott_alműfaj = input("Próbáld újra: ")
+        elif választott_alműfaj in kevésbé_menő_műfaj:
+            print("\nRendben, a lenti könyvet ajánlom. Azért vess egy pillantást az űropera vagy hard sci-fi felé is!")
+
+        random_könyv = ajanlo_app.véletlen_szám_sorsoló(választott_alműfaj)
+        olvasnivaló = ajanlo_app.műfaj_véletlen_könyve(választott_alműfaj, random_könyv)
+        print(olvasnivaló)
+        ajanlo_app.könyv_feljegyzése(választott_alműfaj, random_könyv)
+        ajanlo_app.ajánlás_hely_kiíró()
+        ajanlo_app.elköszönő()
+        jó_választás = False
+    else:
+        print("Hibás alműfaj.")
+        választott_alműfaj = input("Próbáld újra: ")           
 
 
 
